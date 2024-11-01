@@ -2,8 +2,8 @@ from typing import Callable, Protocol, Tuple, NamedTuple
 import numpy as np
 from numpy.typing import NDArray
 
-from .function_huber_l2 import function_huber_l2
-from .grad_huberl2 import grad_huber_l2
+from function_huber_l2 import function_huber_l2
+from grad_huberl2 import grad_huber_l2
 
 class Operator(NamedTuple):
     """Class representing direct and adjoint operators."""
