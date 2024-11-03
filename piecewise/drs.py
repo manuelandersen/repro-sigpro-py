@@ -3,13 +3,17 @@ import matplotlib.pyplot as plt
 from typing import List, Tuple
 from scipy.io import loadmat
 
-from utilities.estimate_huber_op import estimate_huber_op, create_operators, Operator
-from utilities.prox_huberl2_matrix import prox_huber_l2_matrix
+import sys
+import os
+sys.path.append(os.path.abspath('../utilities'))
+
+from estimate_huber_op import estimate_huber_op, create_operators, Operator
+from prox_huberl2_matrix import prox_huber_l2_matrix
 
 
 # Load data from the .mat file
 n = 200
-mat_data = loadmat('./data/signal1D_200_v2.mat')
+mat_data = loadmat('../data/signal1D_200_v2.mat')
 x0 = mat_data['x0'][0]*10
 b = x0 + 0.7 * np.random.randn(*x0.shape)
 
